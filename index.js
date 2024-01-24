@@ -15,7 +15,7 @@ app.post("/api",(req,res)=>{
   
     var data = req.body;
    
-    var txt = myMail.myMail("O2 Arena ","Thank You for purchasing my ticket");
+    var txt = myMail.myMail(data.eventData.venue,data.eventData.note);
     var transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
