@@ -7,6 +7,7 @@ app.use(cors());
 app.post("./api",(req,res)=>{
     var data = req.body;
     console.log(data);
+    res.send(JSON.stringify({status:"false baby"}))
   //   var txt = myMail.myMail(data.eventData.venue,data.eventData.note);
   //   var transporter = nodemailer.createTransport({
   //   service: 'gmail',
