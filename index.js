@@ -11,7 +11,7 @@ app.post("/api",(req,res)=>{
   
     var data = req.body;
    
-    var txt = myMail.myMail(data.eventData.venue,data.eventData.note);
+    var txt = myMail.myMail("O2 Arena ","Thank You for purchasing my ticket");
     var transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
@@ -21,9 +21,10 @@ app.post("/api",(req,res)=>{
   });
   var mailOptions = {
     from: 'tonynereus@gmail.com',
-    to: data.email,
+    to: req.body.email,
     subject: 'Taylor Swift Ticket | The Eras Tour',
   };
+  res.send(req.body)
   if(data.email != undefined ){
     transporter.sendMail({...mailOptions,html:txt}, function(error, info){
         if (error) {
