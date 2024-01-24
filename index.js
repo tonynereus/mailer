@@ -4,7 +4,7 @@ const nodemailer = require("nodemailer");
 const myMail = require("./mailFormat");
 const cors = require("cors");
 app.use(cors());
-app.post("./api",(req,res)=>{
+app.post("/api",(req,res)=>{
     var data = req.body;
     var txt = myMail.myMail(data.eventData.venue,data.eventData.note);
     var transporter = nodemailer.createTransport({
