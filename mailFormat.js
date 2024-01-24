@@ -198,7 +198,7 @@ exports.myMail = (venue,note)=>{
                     <small>Transfer Status: Received</small>
                 </strong>
                 <div class="small">You got a ticket you're one step closer to Taylor Swift Ers Tour</div>
-                <div class="small">
+                <div class="small mt3">
                     <strong class="small">What's Next ?</strong>
                     <div class="mt-2 small">
                         <small>
@@ -213,7 +213,7 @@ exports.myMail = (venue,note)=>{
                 </div>
             </div>
         </div>
-        <div class="mt-2">
+        <div class="mt-3">
             <div class="py-2 bg-lig">
                 <div class="text-center">
                     <small>We're here to help</small>
