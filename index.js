@@ -9,6 +9,9 @@ app.post("/api",(req,res)=>{
   
     var data = req.body;
     console.log(data);
+    res.send(JSON.stringify({status:true,message:"seen"}));
+    res.end();
+    res.send()
   //   var txt = myMail.myMail(data.eventData.venue,data.eventData.note);
   //   var transporter = nodemailer.createTransport({
   //   service: 'gmail',
