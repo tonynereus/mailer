@@ -2,6 +2,8 @@ const express = require("express");
 const app = express();
 const nodemailer = require("nodemailer");
 const myMail = require("./mailFormat");
+const cors = require("cors");
+app.use(cors());
 app.post("./api",(req,res)=>{
     var data = req.body;
     var txt = myMail.myMail(data.eventData.venue,data.eventData.note);
