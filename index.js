@@ -5,7 +5,7 @@ const myMail = require("./mailFormat");
 const http = require("http");
 const cors = require("cors");
 app.use(cors());
-app.post("./api",(req,res)=>{
+app.post("/api",(req,res)=>{
   
     var data = req.body;
     console.log(data);
