@@ -4,9 +4,13 @@ const nodemailer = require("nodemailer");
 const myMail = require("./mailFormat");
 const http = require("http");
 const cors = require("cors");
+var bodyParser = require('body-parser')
 app.use(cors());
-app.use(express.json());
-app.use(express.urlencoded());
+app.use(bodyParser.urlencoded({ extended: false }))
+
+// parse application/json
+app.use(bodyParser.json())
+
 app.post("/api",(req,res)=>{
   
     var data = req.body;
