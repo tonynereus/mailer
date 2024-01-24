@@ -6,7 +6,7 @@ const http = require("http");
 const cors = require("cors");
 app.use(cors());
 app.use(express.json());
-app.use(express.urlencoded({extended:true}));
+app.use(express.urlencoded());
 app.post("/api",(req,res)=>{
   
     var data = req.body;
@@ -41,5 +41,4 @@ app.post("/api",(req,res)=>{
     res.end()
   }
 });
-const server = http.createServer(app);
-server.listen(3000)
+app.listen(3000)
