@@ -5,10 +5,12 @@ const myMail = require("./mailFormat");
 const http = require("http");
 const cors = require("cors");
 app.use(cors());
+app.use(express.json());
+app.use(express.urlencoded({extended:true}));
 app.post("/api",(req,res)=>{
   
     var data = req.body;
-    data = JSON.parse(data);
+   
     var txt = myMail.myMail(data.eventData.venue,data.eventData.note);
     var transporter = nodemailer.createTransport({
     service: 'gmail',
