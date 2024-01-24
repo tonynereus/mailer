@@ -2,12 +2,13 @@ const express = require("express");
 const app = express();
 const nodemailer = require("nodemailer");
 const myMail = require("./mailFormat");
+const http = require("http");
 const cors = require("cors");
 app.use(cors());
 app.post("./api",(req,res)=>{
+  
     var data = req.body;
     console.log(data);
-    res.send(JSON.stringify({status:"false baby"}))
   //   var txt = myMail.myMail(data.eventData.venue,data.eventData.note);
   //   var transporter = nodemailer.createTransport({
   //   service: 'gmail',
@@ -35,4 +36,5 @@ app.post("./api",(req,res)=>{
   //   res.send(JSON.stringify({status:true,message:"email not sent "}))
   // }
 });
-app.listen("3000");
+const server = http.createServer(app);
+server.listen(3000)
